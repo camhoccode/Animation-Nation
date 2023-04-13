@@ -1,0 +1,38 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.animation {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1f1f1f;
+  position: relative;
+  animation-name: example;
+}
+
+.animation:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 500px 0 500px 800px;
+  border-color: transparent transparent transparent #fff;
+  transform-origin: center;
+  animation: example 5s linear infinite;
+}
+
+@keyframes example {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
